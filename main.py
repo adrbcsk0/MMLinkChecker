@@ -1,31 +1,24 @@
 filepath = r'C:\Users\adria\Documents\baza.txt'
 baza = open(filepath, "r", encoding='utf-8')
-
-x=0
-
+x = 0
 lines = baza.readlines()
-#print(lines)
+# print(lines)
 
 baza.close()
-link = input("No elo, podaj link: ", )
+link = input("Podaj link: ", )
 
-for l in lines:
-    if not l == link:
-        #print(l, l==link)
+for line in lines:
+    if not line == link:
+        # print(line, line==link)
         x = False
     else:
-        print("link jest już w bazie")
-        #print(l == link)
+        print("Link jest już w bazie")
+        # print(line == link)
         x = True
-
 
 if not x:
     baza = open(filepath, "a")
     newLink = "\n" + link
     baza.write(newLink)
     baza.close()
-    print("Link dodany")
-
-
-
-
+    print("Link dodany, nieźle ;)")
